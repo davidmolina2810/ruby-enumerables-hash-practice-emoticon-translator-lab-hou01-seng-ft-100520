@@ -15,10 +15,14 @@ end
 def get_japanese_emoticon(file_path, emo)
   # code goes here
   hash = load_library(file_path)
-  if hash.keys.contains?(emo)
-    hash[emo][:japanese]
-  else
-    "Sorry, that emoticon was not found"
+  hash.each do |key, value|
+    value.each do |inner_key, inner_value|
+      if inner_value == emo
+        hash[key][:japanese]
+      else
+        "Sorry, that emoticon was not found"
+      end
+    end
   end
 end
 
