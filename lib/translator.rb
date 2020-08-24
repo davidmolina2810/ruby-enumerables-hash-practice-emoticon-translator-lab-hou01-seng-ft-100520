@@ -18,12 +18,11 @@ def get_japanese_emoticon(file_path, emo)
   hash.each do |key, value|
     value.each do |inner_key, inner_value|
       if inner_value == emo
-        hash[key][:japanese]
-      else
-        "Sorry, that emoticon was not found"
+        return hash[key][:japanese]
       end
     end
   end
+  "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning(file_path, emo)
