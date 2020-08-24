@@ -31,7 +31,6 @@ def get_english_meaning(file_path, emo)
   hash.each do |key, value|
     value.each do |inner_key, inner_value|
       if inner_value == emo
-        binding.pry
         return key
       end
     end
