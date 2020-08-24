@@ -32,7 +32,7 @@ def get_english_meaning(file_path, emo)
     value.each do |inner_key, inner_value|
       if inner_value == emo
         binding.pry 
-        return hash[key][:english]
+        return key
       end
     end
   end
